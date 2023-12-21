@@ -1,3 +1,4 @@
+import LikeButton from "@/component/likeButton/LikeButton";
 import PokemonCard from "@/component/pokemonCard";
 import { IPokemonDetailResponse } from "@/interface/pokemonDetail";
 import { pokemonDetailService, pokemonListService } from "@/service";
@@ -65,6 +66,9 @@ const DetailPage = () => {
         </Link>
         {selectedPokemon.data && (
           <div className="rounded-[20px] overflow-hidden shadow bg-[#6EA3FF] dark:bg-gray-800 dark:border-gray-700 p-[16px] text-white m-auto my-[20px]">
+            <div className="flex justify-end">
+              <LikeButton nameId={name || ""} sizeImg="8" />
+            </div>
             <div className="bg-[url('/image/pokemon_bg.png')] bg-center aspect-square w-full bg-cover rounded-[20px] p-10">
               <img
                 className="rounded-t-lg h-[400px] pt-[50px] w-full"

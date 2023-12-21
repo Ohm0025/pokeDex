@@ -1,5 +1,6 @@
 import { Type } from "@/interface/pokemonDetail";
 import { Link } from "react-router-dom";
+import LikeButton from "../likeButton/LikeButton";
 
 interface PokemonCardProps {
   image: string;
@@ -29,16 +30,21 @@ const PokemonCard = ({ image, name, id, types }: PokemonCardProps) => {
             {"#" + id}
           </h5>
         </div>
-        <div className="flex gap-2 justify-end mt-[16px]">
-          {types.map((item, index) => {
-            return (
-              <span
-                key={`pokemon-card-${index}`}
-                className={`badge-type-${item.type.name} px-[14px] py-1 rounded-lg capitalize text-black dark:text-white`}>
-                {item.type.name}
-              </span>
-            );
-          })}
+        <div className="flex gap-2 justify-between items-center mt-[16px]">
+          <div>
+            <LikeButton nameId={name} sizeImg="5" />
+          </div>
+          <div className="flex gap-2 justify-end">
+            {types.map((item, index) => {
+              return (
+                <span
+                  key={`pokemon-card-${index}`}
+                  className={`badge-type-${item.type.name} px-[14px] py-1 rounded-lg capitalize text-black dark:text-white`}>
+                  {item.type.name}
+                </span>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
