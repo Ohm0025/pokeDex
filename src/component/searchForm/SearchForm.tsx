@@ -6,6 +6,7 @@ type Props = {};
 
 const SearchForm = (props: Props) => {
   const { fieldKeyword, fieldGen, fieldSort, fieldType } = useSearchForm();
+  const genCache = localStorage.getItem("genCache");
   return (
     <form className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-[20px]">
       <div>
@@ -20,7 +21,10 @@ const SearchForm = (props: Props) => {
           className="bg-[#599bf6] text-gray-900 dark:bg-[#253641] border border-[#284977] dark:border-gray-300 dark:text-white text-sm rounded-lg focus:border-blue-500 block w-full p-2.5">
           {generationList.map((item, index) => {
             return (
-              <option key={`generation-key-${index}`} value={index}>
+              <option
+                key={`generation-key-${index}`}
+                value={index}
+                selected={genCache === item.name}>
                 {item.name}
               </option>
             );

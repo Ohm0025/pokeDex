@@ -16,6 +16,8 @@ const useSearchForm = () => {
   const { setFetchPokemonList, fetchPokemon, setPokemonList } =
     usePokemonListStore();
 
+  const genCache = localStorage.getItem("genCache");
+
   const keyword = watch("keyword");
   const generation = watch("generation");
   const type = watch("type");
@@ -28,6 +30,7 @@ const useSearchForm = () => {
   }) => {
     setFetchPokemonList({ data: [], loading: true, error: null });
     const responseList = await pokemonListService.getPokemonList(
+      filter.name,
       filter.limit,
       filter.offset
     );
@@ -98,8 +101,11 @@ const useSearchForm = () => {
   };
 
   useEffect(() => {
-    generation !== undefined && callData(generationList[generation]);
+    if (generation !== undefined) {
+      callData(generationList[generation]);
+    }
   }, [generation]);
+
   useEffect(() => {
     const data = filterPokemon(fetchPokemon.data, keyword, type, sort);
     setPokemonList({ data: data, loading: false, error: null });

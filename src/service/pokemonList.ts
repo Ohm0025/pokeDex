@@ -10,14 +10,30 @@ interface IGetPokemonListResponse extends IRespose {
 
 export const pokemonListService = {
   getPokemonList: async (
+    nameGen: string,
     limit?: number,
     offset?: number
   ): Promise<IGetPokemonListResponse> => {
     try {
-      const response = await axios.get(
-        `${API_BASE_URL}pokemon?limit=${limit || 151}&offset=${offset || 0}`
-      );
-      return handleResponse.success(response);
+      console.log(nameGen);
+      const genCache = localStorage.getItem("genCache");
+
+      const cache = localStorage.getItem("cacheData");
+      const cacheData = JSON.parse(cache || "null");
+
+      if (cacheData.data && genCache === nameGen) {
+        console.log("have cache");
+        console.log(cacheData.data);
+        return handleResponse.success(cacheData);
+      } else {
+        const response = await axios.get(
+          `${API_BASE_URL}pokemon?limit=${limit || 151}&offset=${offset || 0}`
+        );
+        console.log("have no cache");
+        localStorage.setItem("genCache", nameGen);
+        localStorage.setItem("cacheData", JSON.stringify(response));
+        return handleResponse.success(response);
+      }
     } catch (error: any) {
       return handleResponse.error(error);
     }
