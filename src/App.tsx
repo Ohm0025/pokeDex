@@ -19,8 +19,8 @@ function App() {
   return (
     <div
       className={`bg-[url("/image/light-bg.jpg")] dark:bg-[url("/image/dark-bg.jpg")] bg-cover bg-no-repeat bg-center min-h-[100vh] pb-[20px] relative`}>
-      <RouterProvider router={router} />
       <ButtonTheme />
+      <RouterProvider router={router} />
     </div>
   );
 }
