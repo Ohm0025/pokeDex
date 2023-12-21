@@ -21,7 +21,7 @@ export const pokemonListService = {
       const cache = localStorage.getItem("cacheData");
       const cacheData = JSON.parse(cache || "null");
 
-      if (cacheData.data && genCache === nameGen) {
+      if (cacheData?.data && genCache === nameGen) {
         console.log("have cache");
         console.log(cacheData.data);
         return handleResponse.success(cacheData);

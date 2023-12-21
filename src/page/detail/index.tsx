@@ -128,9 +128,11 @@ const DetailPage = () => {
                 <div>
                   <h5 className="text-white font-semibold">Status</h5>
                   <div className="grid grid-col-1 gap-[7px] mt-1">
-                    {selectedPokemon.data.stats.map((item) => {
+                    {selectedPokemon.data.stats.map((item, index) => {
                       return (
-                        <div className="flex gap-x-[10px] justify-between">
+                        <div
+                          key={`pokestat-${index}`}
+                          className="flex gap-x-[10px] justify-between">
                           <div className="text-[#4CAFEB] font-semibold capitalize">
                             {item.stat.name}
                           </div>

@@ -16,8 +16,6 @@ const useSearchForm = () => {
   const { setFetchPokemonList, fetchPokemon, setPokemonList } =
     usePokemonListStore();
 
-  const genCache = localStorage.getItem("genCache");
-
   const keyword = watch("keyword");
   const generation = watch("generation");
   const type = watch("type");
