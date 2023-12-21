@@ -1,7 +1,8 @@
 // import "./App.css";
-import { RouterProvider, createBrowserRouter, Link } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./page/home";
 import DetailPage from "./page/detail";
+import ButtonTheme from "./component/buttonTheme/ButtonTheme";
 
 function App() {
   const router = createBrowserRouter([
@@ -17,8 +18,9 @@ function App() {
 
   return (
     <div
-      className={`bg-[url("/image/home-bg.jpg")] bg-cover bg-no-repeat bg-center min-h-[100vh] pb-[20px]`}>
+      className={`bg-[url("/image/light-bg.jpg")] dark:bg-[url("/image/dark-bg.jpg")] bg-cover bg-no-repeat bg-center min-h-[100vh] pb-[20px] relative`}>
       <RouterProvider router={router} />
+      <ButtonTheme />
     </div>
   );
 }

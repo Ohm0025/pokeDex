@@ -60,11 +60,11 @@ const DetailPage = () => {
       <div className="w-[90%] max-w-[600px] m-[auto]">
         <Link
           to="/"
-          className="text-white underline tracking-wide text-[18px] bg-[#4cafeb] rounded-[16px] px-[16px] py-[10px]">
+          className="text-white underline tracking-wide text-[18px] bg-[#4cafeb] dark:bg-[#050833] rounded-[16px] px-[16px] py-[10px]">
           Back
         </Link>
         {selectedPokemon.data && (
-          <div className="rounded-[20px] overflow-hidden shadow dark:bg-gray-800 dark:border-gray-700 p-[16px] text-white m-auto">
+          <div className="rounded-[20px] overflow-hidden shadow bg-[#6EA3FF] dark:bg-gray-800 dark:border-gray-700 p-[16px] text-white m-auto my-[20px]">
             <div className="bg-[url('/image/pokemon_bg.png')] bg-center aspect-square w-full bg-cover rounded-[20px] p-10">
               <img
                 className="rounded-t-lg h-[400px] pt-[50px] w-full"
@@ -72,7 +72,7 @@ const DetailPage = () => {
                 alt=""
               />
             </div>
-            <div className="pt-5 bg-[#253641] rounded-[20px] p-[16px] my-[20px]">
+            <div className="pt-5 bg-[#A8CDFE] dark:bg-[#253641] rounded-[20px] p-[16px] my-[20px]">
               <div className="flex justify-between">
                 <h5 className="mb-2 capitalize text-white text-xl font-bold tracking-tight dark:text-white">
                   {name}
