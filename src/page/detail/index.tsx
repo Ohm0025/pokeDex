@@ -101,10 +101,10 @@ const DetailPage = () => {
                   </div>
                 </div>
                 <div className="flex gap-2 justify-start sm:justify-end mt-[16px]">
-                  {selectedPokemon.data?.types.map((item, index) => {
+                  {selectedPokemon.data?.types.map((item, index1) => {
                     return (
                       <span
-                        key={`pokemon-card-${index}`}
+                        key={`pokemon-card-${index1}`}
                         className={`badge-type-${item.type.name} px-[14px] py-1 rounded-lg capitalize text-[gray]`}>
                         {item.type.name}
                       </span>
@@ -114,9 +114,11 @@ const DetailPage = () => {
                 <div>
                   <h5 className="text-white font-semibold">Abilities</h5>
                   <div className="grid grid-cols-2 sm:grid-col-1 gap-[7px] mt-1">
-                    {selectedPokemon.data.abilities.map((item) => {
+                    {selectedPokemon.data.abilities.map((item, index2) => {
                       return (
-                        <div className="bg-[#4cafeb] px-[14px] capitalize py-1 rounded-[16px] text-center">
+                        <div
+                          key={`pokemon-ability-${index2}`}
+                          className="bg-[#4cafeb] px-[14px] capitalize py-1 rounded-[16px] text-center">
                           {item.ability.name}
                         </div>
                       );
@@ -126,9 +128,11 @@ const DetailPage = () => {
                 <div>
                   <h5 className="text-white font-semibold">Status</h5>
                   <div className="grid grid-col-1 gap-[7px] mt-1">
-                    {selectedPokemon.data.stats.map((item) => {
+                    {selectedPokemon.data.stats.map((item, index) => {
                       return (
-                        <div className="flex gap-x-[10px] justify-between">
+                        <div
+                          key={`pokestat-${index}`}
+                          className="flex gap-x-[10px] justify-between">
                           <div className="text-[#4CAFEB] font-semibold capitalize">
                             {item.stat.name}
                           </div>
