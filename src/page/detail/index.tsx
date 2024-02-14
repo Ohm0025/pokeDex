@@ -1,8 +1,7 @@
 import LikeButton from "@/component/likeButton/LikeButton";
-import PokemonCard from "@/component/pokemonCard";
 import { IPokemonDetailResponse } from "@/interface/pokemonDetail";
-import { pokemonDetailService, pokemonListService } from "@/service";
-import { usePokemonListStore } from "@/store/pokemonList";
+import { pokemonDetailService } from "@/service";
+
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 

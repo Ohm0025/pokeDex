@@ -1,10 +1,7 @@
-import React from "react";
 import { generationList, typesList, sortList } from "@/utils/optionList";
 import { useSearchForm } from "@/component/searchForm/SearchForm.hook";
 
-type Props = {};
-
-const SearchForm = (props: Props) => {
+const SearchForm = () => {
   const { fieldKeyword, fieldGen, fieldSort, fieldType } = useSearchForm();
   return (
     <form className="grid sm:grid-cols-2 md:grid-cols-4 gap-x-[20px]">

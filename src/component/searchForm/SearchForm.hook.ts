@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { pokemonListService, pokemonDetailService } from "@/service";
 import { useForm } from "react-hook-form";
 import { usePokemonListStore } from "@/store/pokemonList";
@@ -8,9 +8,9 @@ import { generationList } from "@/utils/optionList";
 const useSearchForm = () => {
   const {
     register,
-    handleSubmit,
+
     watch,
-    formState: { errors },
+    formState: {},
   } = useForm();
 
   const { setFetchPokemonList, fetchPokemon, setPokemonList } =

@@ -1,5 +1,5 @@
 import { useLikePokemon } from "@/store/likeList";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type Props = {
   nameId: string;

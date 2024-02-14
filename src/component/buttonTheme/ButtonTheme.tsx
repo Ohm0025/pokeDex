@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-type Props = {};
-
-const ButtonTheme = (props: Props) => {
+const ButtonTheme = () => {
   const [isDark, setIsDark] = useState(false);
   const changeMode = () => {
     if (isDark) {
